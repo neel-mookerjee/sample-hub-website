@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hub-website
+spec:
+  replicas: 2
+  revisionHistoryLimit: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  minReadySeconds: 30
+  template:
+    metadata:
+      labels:
+        app: hub-website
+    spec:
+      containers:
+      - name: website
+        image: "hub-website:latest"
+        ports:
+        - containerPort: 80

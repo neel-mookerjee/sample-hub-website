@@ -1,0 +1,27 @@
+<!-- 1st level -->
+{% for nav in site.data.menu %}
+
+  {% if nav.submenu != null %}
+
+    <li>
+      <ul>
+        <!-- 2nd level -->
+        {% for sub in nav.submenu %}
+        <li>
+          <a href="{{ site.baseurl }}{{ submenu.url }}">
+            {{ submenu.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+
+  {% else %}
+
+    <li>
+      <a href="{{ site.baseurl }}{{ nav.url}}">{{ nav.title }}</a>
+    </li>
+
+  {% endif %}
+
+{% endfor %}

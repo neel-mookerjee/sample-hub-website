@@ -1,0 +1,12 @@
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | absolute_url }}{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+    {% if site.repo.url %}
+      <li><a href="{{ site.repo.url }}"><i class="fa fa-fw fa-bitbucket" aria-hidden="true"></i> Source</a></li>
+    {% endif %}
+  </ul>
+</div>
+
+<div class="page__footer-copyright">
+  &copy; {{ site.time | date: '%Y' }} Banana Republic!
+</div>

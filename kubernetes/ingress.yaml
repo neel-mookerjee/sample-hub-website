@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hub-website
+  labels:
+    app: hub-website
+spec:
+  tls:
+  - hosts:
+    - hub.platform.r53.domain.net
+    # secretName: platform-tls
+  rules:
+  - host: hub.platform.r53.domain.net
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: hub-website
+          servicePort: 80

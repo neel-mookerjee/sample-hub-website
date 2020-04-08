@@ -1,0 +1,26 @@
+main:
+
+- title: "Documentation"
+  url: /docs/data-pipeline/
+
+
+# documentation links
+docs:
+- title: Title1
+  url: /docs/page_1/
+  children:
+  - title: "Page A"
+    url: /docs/page_a/
+  - title: "Page B"
+    url: /docs/page_b/
+
+- title: Title2
+  url: /docs/page_2/
+  children:
+  - title: "Page C"
+    url: /docs/page_c/
+  - title: "Page D"
+    url: /docs/page_d/
+
+- title: Title3
+  url: /docs/page_3/
